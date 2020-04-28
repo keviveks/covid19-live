@@ -16,4 +16,8 @@ class CovidRepository {
   Future<List<CovidCountry>> fetchCovidCountries() async {
     return await _covidDatasource.getCountries();
   }
+
+  List<CovidCountry> fetchFilteredCovidCountries(String text, List<CovidCountry> countries) {
+    return _covidDatasource.filterCountries(text, countries);
+  }
 }

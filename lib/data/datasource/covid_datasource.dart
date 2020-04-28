@@ -27,4 +27,13 @@ class CovidDatasource {
       throw Exception('Network Error!');
     }
   }
+
+  List<CovidCountry> filterCountries(String text, List countries) {
+    if (countries.length > 0) {
+      List<CovidCountry> filteredCountries = countries.where((c) => c.country.toLowerCase().contains(text.trim().toLowerCase())).toList();
+      return filteredCountries;
+    } else {
+      return [];
+    }
+  }
 }

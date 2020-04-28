@@ -1,3 +1,4 @@
+import 'package:covid19_live/data/models/covid_country.dart';
 import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
 
@@ -14,6 +15,23 @@ class CovidCountryUpdateEvent extends CovidCountriesEvent {
 
   CovidCountryUpdateEvent({ @required this.country });
 
+  @override
+  // TODO: implement props
+  List<Object> get props => null;
+
+}
+
+class CovidCountryFilterEvent extends CovidCountriesEvent {
+  final String text;
+  final List<CovidCountry> countries;
+
+  CovidCountryFilterEvent({ @required this.text, @required this.countries });
+
+  @override
+  List<Object> get props => null;
+}
+
+class CovidCountryFilterCloseEvent extends CovidCountriesEvent {
   @override
   // TODO: implement props
   List<Object> get props => null;

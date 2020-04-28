@@ -31,3 +31,19 @@ class CovidCountryFailure extends CovidCountryState {
   @override
   List<Object> get props => null;
 }
+
+
+class CovidFilteredCountries extends CovidCountryState {
+  final List countries;
+
+  CovidFilteredCountries({ @required this.countries });
+
+  @override
+  List<Object> get props => null;
+}
+
+class CovidCountriesNotFound extends CovidCountryState {
+  @override
+  // TODO: implement props
+  List<Object> get props => null;
+}

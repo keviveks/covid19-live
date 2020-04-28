@@ -13,7 +13,7 @@ class CovidDatasource {
       CovidSummary covidSummary = CovidSummary.fromJson(data);
       return covidSummary;
     } else {
-      throw Exception('API failed!');
+      throw Exception('Network Error!');
     }
   }
 
@@ -24,7 +24,7 @@ class CovidDatasource {
       List<CovidCountry> covidCountryList = CovidCountryList.fromJson(data).countries;
       return covidCountryList;
     } else {
-      throw Exception('API failed!');
+      throw Exception('Network Error!');
     }
   }
 }

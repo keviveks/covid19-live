@@ -7,7 +7,7 @@ import 'package:bloc/bloc.dart';
 
 class CovidCountriesBloc extends Bloc<CovidCountriesEvent, CovidCountryState> {
   CovidRepository covidRepository;
-  List<CovidCountry> covidCountries;
+  List<CovidCountry> countries;
 
   CovidCountriesBloc({ @required this.covidRepository });
 
@@ -21,7 +21,7 @@ class CovidCountriesBloc extends Bloc<CovidCountriesEvent, CovidCountryState> {
     } else if (event is CovidCountryFilterEvent) {
       yield* mapCovidCountryFilterEventToState(event);
     } else if (event is CovidCountryFilterCloseEvent) {
-      yield CovidCountrySuccess(covidCountries: this.covidCountries);
+      yield CovidCountrySuccess(countries: this.countries);
     }
   }
 
@@ -29,8 +29,8 @@ class CovidCountriesBloc extends Bloc<CovidCountriesEvent, CovidCountryState> {
     yield CovidCountryLoading();
 
     try {
-      this.covidCountries = await covidRepository.fetchCovidCountries();
-      yield CovidCountrySuccess(covidCountries: this.covidCountries);
+      this.countries = await covidRepository.fetchCovidCountries();
+      yield CovidCountrySuccess(countries: this.countries);
     } catch(e) {
       yield CovidCountryFailure(message: e.toString());
     }

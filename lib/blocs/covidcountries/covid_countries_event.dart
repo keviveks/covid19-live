@@ -6,7 +6,6 @@ abstract class CovidCountriesEvent extends Equatable {}
 
 class FetchCovidCountryEvent extends CovidCountriesEvent {
   @override
-  // TODO: implement props
   List<Object> get props => null;
 }
 
@@ -16,9 +15,7 @@ class CovidCountryUpdateEvent extends CovidCountriesEvent {
   CovidCountryUpdateEvent({ @required this.country });
 
   @override
-  // TODO: implement props
   List<Object> get props => null;
-
 }
 
 class CovidCountryFilterEvent extends CovidCountriesEvent {
@@ -33,7 +30,5 @@ class CovidCountryFilterEvent extends CovidCountriesEvent {
 
 class CovidCountryFilterCloseEvent extends CovidCountriesEvent {
   @override
-  // TODO: implement props
   List<Object> get props => null;
-
 }

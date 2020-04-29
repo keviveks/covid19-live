@@ -94,8 +94,8 @@ class CountryInfo {
   int iId;
   String iso2;
   String iso3;
-  int lat;
-  int long;
+  var lat;
+  var long;
   String flag;
 
   CountryInfo({this.iId, this.iso2, this.iso3, this.lat, this.long, this.flag});
